@@ -1,10 +1,12 @@
 import React from 'react'
+import Header from '../../components/header/Header';
 import Product from '../../components/product/Product';
 import './Home.css';
 
 function Home() {
     return (
         <>
+            <Header />
             <div className='home'>
                 <div className="home_container">
                     <img className='home_image' src='https://m.media-amazon.com/images/I/71H5hK4wUqL._SX3000_.jpg' alt='' />
