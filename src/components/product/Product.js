@@ -1,11 +1,9 @@
 import React from 'react'
-import { useStateValue } from '../../services/StateProvider'
+import { useStateValue } from '../../services/contextAPI/StateProvider'
 import './Product.css'
 
 function Product({ id, title, image, price, rating }) {
     const [{basket}, dispatch] = useStateValue()
-
-    console.log('this is the basket >>>', basket)
 
     const addToBasket = () => {
         dispatch({
