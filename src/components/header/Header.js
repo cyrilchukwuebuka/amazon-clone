@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import { useStateValue } from '../../services/contextAPI/StateProvider'
 
 export default function Header() {
-    const [{basket}, dispatch] = useStateValue()
+    const [{ basket }, dispatch] = useStateValue()
 
     return (
         <div className='header'>
@@ -20,10 +20,12 @@ export default function Header() {
             </div>
 
             <div className="header_nav">
-                <div className="header_option">
-                    <span className="header_optionLine1">Hello Guest</span>
-                    <span className="header_optionLine2">Sign in</span>
-                </div>
+                <Link className='link' to='/login'>
+                    <div className="header_option">
+                        <span className="header_optionLine1">Hello Guest</span>
+                        <span className="header_optionLine2">Sign in</span>
+                    </div>
+                </Link>
                 <div className="header_option">
                     <span className="header_optionLine1">Returns</span>
                     <span className="header_optionLine2">& Orders</span>
@@ -37,7 +39,7 @@ export default function Header() {
             <Link to='/checkout'>
                 <div className="header_optionBasket">
                     <ShoppingBasket />
-                        <span className="header_optionLine2 header_basketCount">{basket?.length}</span>
+                    <span className="header_optionLine2 header_basketCount">{basket?.length}</span>
                 </div>
             </Link>
         </div>
